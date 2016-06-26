@@ -36,6 +36,8 @@ script:
     --connection=local
     | grep -q 'changed=0.*failed=0'
   # Test for Succuss
-
+  - >
+    irssi --version
+    | grep -q "irssi"
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
