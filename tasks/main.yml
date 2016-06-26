@@ -1,2 +1,50 @@
 ---
 # tasks file for ansible-irssi
+
+- name: "install irssi"
+  become: yes
+  package:
+    name: irssi
+    state: present
+  tags:
+    - install
+
+- name: "create irssi group"
+  become: yes
+  group:
+    name: "{{ irssi_group }}"
+  tags:
+    - install
+
+- name: "create irssi user"
+  become: yes
+  user:
+    name: "{{ irssi_user }}"
+    group: "{{ irssi_group }}"
+    home: "{{ irssi_user_home }}"
+    shell: /bin/bash
+  tags:
+    - install
+
+- name: "create irssi directories"
+  become: yes
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ irssi_user }}"
+    group: "{{ irssi_group }}"
+  with_items:
+    - "{{ irssi_directory_config }}"
+    - "{{ irssi_directory_scripts }}"
+  tags:
+    - install
+
+- name: "configure irssi"
+  become: yes
+  template:
+    src: config.j2
+    dest: "{{ irssi_directory_config }}/config"
+    owner: "{{ irssi_user }}"
+    group: "{{ irssi_group }}"
+  tags:
+    - configuration
