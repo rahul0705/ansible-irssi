@@ -38,7 +38,7 @@ Example Playbook
     - role: irssi
 ```
 
-2) Install rTorrent with custom settings
+2) Install Irssi with custom settings
 
 ```yaml
 - hosts: all
