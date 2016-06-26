@@ -9,23 +9,6 @@
   tags:
     - install
 
-- name: "create irssi group"
-  become: yes
-  group:
-    name: "{{ irssi_group }}"
-  tags:
-    - install
-
-- name: "create irssi user"
-  become: yes
-  user:
-    name: "{{ irssi_user }}"
-    group: "{{ irssi_group }}"
-    home: "{{ irssi_user_home }}"
-    shell: /bin/bash
-  tags:
-    - install
-
 - name: "create irssi directories"
   become: yes
   file:
