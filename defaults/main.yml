@@ -1,9 +1,10 @@
 ---
 # defaults file for ansible-irssi
 
-irssi_user: "{{ ansible_ssh_user }}"
-irssi_group: "{{ ansible_ssh_user }}"
+irssi_user: "{{ ansible_user }}"
+irssi_group: "{{ ansible_user }}"
 irssi_user_home: /home/{{ irssi_user }}
 
 irssi_directory_config: "{{ irssi_user_home }}/.irssi"
 irssi_directory_scripts: "{{ irssi_directory_config }}/scripts"
+irssi_directory_autorun: "{{ irssi_directory_scripts }}/autorun"
