@@ -16,7 +16,6 @@
     group: "{{ irssi_group }}"
   with_items:
     - "{{ irssi_directory }}"
-    - "{{ irssi_directory_config }}"
     - "{{ irssi_directory_scripts }}"
   tags:
     - install
@@ -24,7 +23,7 @@
 - name: Configure irssi
   template:
     src: config.j2
-    dest: "{{ irssi_directory_config }}"
+    dest: "{{ irssi_directory }}/config"
     owner: "{{ irssi_user }}"
     group: "{{ irssi_group }}"
   tags:
