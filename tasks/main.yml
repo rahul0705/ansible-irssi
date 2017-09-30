@@ -17,6 +17,7 @@
     owner: "{{ irssi_user }}"
     group: "{{ irssi_group }}"
   with_items:
+    - "{{ irssi_directory }}"
     - "{{ irssi_directory_config }}"
     - "{{ irssi_directory_scripts }}"
   tags:
@@ -26,7 +27,7 @@
   become: yes
   template:
     src: config.j2
-    dest: "{{ irssi_directory_config }}/config"
+    dest: "{{ irssi_directory_config }}"
     owner: "{{ irssi_user }}"
     group: "{{ irssi_group }}"
   tags:
