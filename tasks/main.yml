@@ -2,7 +2,6 @@
 # tasks file for ansible-irssi
 
 - name: Install irssi
-  become: yes
   package:
     name: irssi
     state: present
@@ -10,7 +9,6 @@
     - install
 
 - name: Create irssi directories
-  become: yes
   file:
     path: "{{ item }}"
     state: directory
@@ -24,7 +22,6 @@
     - install
 
 - name: Configure irssi
-  become: yes
   template:
     src: config.j2
     dest: "{{ irssi_directory_config }}"
