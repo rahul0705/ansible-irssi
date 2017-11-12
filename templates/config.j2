@@ -17,80 +17,20 @@ servers = (
 );
 
 chatnets = {
-  Ubuntu = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-  };
-  DALnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "20";
-    max_whois = "30";
-  };
-  EFNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-  };
-  EsperNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-  };
-  Freenode = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-  };
-  GameSurge = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "1";
-    max_whois = "1";
-  };
-  IRCnet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "1";
-    max_whois = "1";
-  };
-  IRCSource = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-  };
-  NetFuze = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "1";
-    max_whois = "1";
-  };
+  Ubuntu = { type = "IRC"; max_kicks = "1"; max_msgs = "4"; max_whois = "1"; };
+  DALnet = { type = "IRC"; max_kicks = "4"; max_msgs = "20"; max_whois = "30"; };
+  EFNet = { type = "IRC"; max_kicks = "1"; max_msgs = "4"; max_whois = "1"; };
+  EsperNet = { type = "IRC"; max_kicks = "1"; max_msgs = "4"; max_whois = "1"; };
+  Freenode = { type = "IRC"; max_kicks = "1"; max_msgs = "4"; max_whois = "1"; };
+  GameSurge = { type = "IRC"; max_kicks = "1";max_msgs = "1"; max_whois = "1"; };
+  IRCnet = { type = "IRC"; max_kicks = "1"; max_msgs = "1"; max_whois = "1"; };
+  IRCSource = { type = "IRC"; max_kicks = "1"; max_msgs = "4"; max_whois = "1"; };
+  NetFuze = { type = "IRC"; max_kicks = "1"; max_msgs = "1"; max_whois = "1"; };
   OFTC = { type = "IRC"; max_kicks = "1"; max_msgs = "1"; max_whois = "1"; };
-  QuakeNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "1";
-    max_whois = "1";
-  };
-  Rizon = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "1";
-    max_whois = "1";
-  };
+  QuakeNet = { type = "IRC"; max_kicks = "1"; max_msgs = "1"; max_whois = "1"; };
+  Rizon = { type = "IRC"; max_kicks = "1"; max_msgs = "1"; max_whois = "1"; };
   SILC = { type = "SILC"; };
-  Undernet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "1";
-    max_whois = "1";
-  };
+  Undernet = { type = "IRC"; max_kicks = "1"; max_msgs = "1"; max_whois = "1"; };
 };
 
 channels = (
@@ -262,42 +202,30 @@ aliases = {
 };
 
 statusbar = {
-
   items = {
-
     barstart = "{sbstart}";
     barend = "{sbend}";
-
     topicbarstart = "{topicsbstart}";
     topicbarend = "{topicsbend}";
-
     time = "{sb $Z}";
     user = "{sb {sbnickmode $cumode}$N{sbmode $usermode}{sbaway $A}}";
-
     window = "{sb $winref:$tag/$itemname{sbmode $M}}";
     window_empty = "{sb $winref{sbservertag $tag}}";
-
     prompt = "{prompt $[.15]itemname}";
     prompt_empty = "{prompt $winname}";
-
     topic = " $topic";
     topic_empty = " Irssi v$J - http://www.irssi.org";
-
     lag = "{sb Lag: $0-}";
     act = "{sb Act: $0-}";
     more = "-- more --";
   };
-
   default = {
-
     window = {
-
       disabled = "no";
       type = "window";
       placement = "bottom";
       position = "1";
       visible = "active";
-
       items = {
         barstart = { priority = "100"; };
         time = { };
@@ -310,14 +238,11 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
-
     window_inact = {
-
       type = "window";
       placement = "bottom";
       position = "1";
       visible = "inactive";
-
       items = {
         barstart = { priority = "100"; };
         window = { };
@@ -326,28 +251,22 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
-
     prompt = {
-
       type = "root";
       placement = "bottom";
       position = "100";
       visible = "always";
-
       items = {
         prompt = { priority = "-1"; };
         prompt_empty = { priority = "-1"; };
         input = { priority = "10"; };
       };
     };
-
     topic = {
-
       type = "root";
       placement = "top";
       position = "1";
       visible = "always";
-
       items = {
         topicbarstart = { priority = "100"; };
         topic = { };
@@ -357,6 +276,7 @@ statusbar = {
     };
   };
 };
+
 settings = {
   core = { real_name = "rahul"; user_name = "rahul"; nick = "rahul"; };
   "fe-text" = { actlist_sort = "refnum"; };
